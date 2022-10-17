@@ -1,7 +1,6 @@
 import './App.css';
-import Sidebar from './components/partial/sidebar';
-import SectionTask from './components/partial/section_task';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Container from './components/container';
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
 
@@ -11,8 +10,8 @@ function App() {
       "day":"Monday",
       "completed":false,
       "tasks":[
-        {"title":"Zrobić kupę w poniedziałek","description":"Lorem Ipsum","done":true,"created":""},
-        {"title":"Umyć włosy","description":"Lorem Ipsum","done":false,"created":""},
+        {"id":534,"title":"LP w poniedziałek","description":"Lorem Ipsum","done":true,"created":""},
+        {"id":645654,"title":"Zrobić promo","description":"Lorem Ipsum","done":false,"created":""},
       ]
     },
     {
@@ -20,8 +19,8 @@ function App() {
       "day":"Tuesday",
       "completed":false,
       "tasks":[
-        {"title":"Zrobić kupę we wtorek","description":"Lorem Ipsum","done":true,"created":""},
-        {"title":"Umyć włosy","description":"Lorem Ipsum","done":false,"created":""},
+        {"id":3123,"title":"LP we wtorek","description":"Lorem Ipsum","done":true,"created":""},
+        {"id":45454,"title":"zrobić LPKA","description":"Lorem Ipsum","done":false,"created":""},
       ]
     }
   ]
@@ -29,11 +28,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-            <Routes>
-                <Route index element="Wybierz dzień tygodnia"/>
-                {data.map((el,indexEl)=><Route exact path={el.day} element={<SectionTask data={data} day={indexEl}/>} />)}
-            </Routes>
-            <Sidebar data={data}/>
+            <Container data={data} />
         </BrowserRouter>
     </div>
   );

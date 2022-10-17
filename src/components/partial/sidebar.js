@@ -4,7 +4,8 @@ function Sidebar(props) {
 
   return (
     <div>
-        {props.data.map(el=><li><Link to={el.day}>{el.day}</Link></li>)}
+      <Outlet/>
+        {props.data.map((el,indexEl)=><li key={indexEl}><Link to={el.day}>{el.day}</Link></li>)}
     </div>
   );
 }
