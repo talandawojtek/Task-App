@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/partial/sidebar";
 
-function Dashboard(props) {
+function Dashboard({AddTask,data}) {
 
   return (
         <div>
             <h1> App !</h1>
-            <Sidebar data={props.data}/>
+            <Sidebar AddTask={AddTask} data={data}/>
             <Outlet/>
         </div>
   );
